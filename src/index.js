@@ -22,8 +22,8 @@ const client = new Client({
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
 const commands = [
-  PingCommand,
-  // ScrappyCommand,
+  // PingCommand,
+  ScrappyCommand,
   // ModalCommand,
 ];
 

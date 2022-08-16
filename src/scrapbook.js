@@ -1,8 +1,12 @@
+import ShortUniqueId from 'short-unique-id';
 import base from './base.js';
+
+const uid = new ShortUniqueId({ length: 10 });
 
 // TODO: add error messages
 // TODO: send different messages for new users
 // TODO: link to scrapbook page on post (special welcome page for new users)
+// TODO: use uuid instead of discord tag for temp username
 
 function fetchUser(discordUid) {
   return new Promise((resolve, reject) => {
@@ -17,9 +21,10 @@ function fetchUser(discordUid) {
   });
 }
 
-function createUser(discordUid, discordTag, avatarURL) {
+function createUser(discordUid, discordUsername, avatarURL) {
   return new Promise((resolve, reject) => {
-    const tempUsername = discordTag.replace(/[^a-zA-Z0-9]/g, ''); // temp username before user sets their own
+    const tempUsername = discordUsername.replace(/[^a-zA-Z0-9]/g, '').concat('-', uid()); // temp username before user sets their own
+    // const tempUsername = discordTag.replace(/[^a-zA-Z0-9]/g, '');
     if (!avatarURL) avatarURL = `https://avatars.dicebear.com/api/jdenticon/${tempUsername}.svg`; // https://avatars.dicebear.com/docs/http-api
 
     base('Users').create([
@@ -72,7 +77,7 @@ export async function handleScrapbook(client, message) {
   // if user doesn't exist, create it
   if (!user) {
     let avatarURL = await message.author.avatarURL();
-    user = await createUser(message.author.id, message.author.tag, avatarURL);    
+    user = await createUser(message.author.id, message.author.username, avatarURL);    
   }
 
   // create thread from message

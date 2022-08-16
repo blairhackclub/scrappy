@@ -15,7 +15,8 @@
     "@discordjs/rest": "^1.0.1",
     "airtable": "^0.11.4",
     "discord.js": "^14.2.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.1",
+    "short-unique-id": "^4.4.4"
   },
   "type": "module",
   "devDependencies": {
