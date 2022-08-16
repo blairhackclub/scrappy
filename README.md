@@ -1,1 +1,9 @@
 # Scrappy
+
+## Environment variables
+- AIRTABLE_BASE_ID
+- AIRTABLE_API_KEY
+- CLIENT_ID
+- TOKEN
+- GUILD_ID
+- SCRAPBOOK_CHANNEL_ID
