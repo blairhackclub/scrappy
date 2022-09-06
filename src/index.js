@@ -1,15 +1,28 @@
-import dotenv from 'dotenv';
-import { Client, GatewayIntentBits, Routes } from 'discord.js';
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { REST } from '@discordjs/rest';
+// import dotenv from 'dotenv';
+// import { Client, GatewayIntentBits, Routes } from 'discord.js';
+// import { SlashCommandBuilder } from '@discordjs/builders';
+// import { REST } from '@discordjs/rest';
 
-import { handleScrapbook } from './scrapbook.js';
+// import { handleScrapbook } from './scrapbook.js';
 
-import PingCommand from './commands/ping.js';
-import ScrappyCommand from './commands/scrappy.js';
-import ModalCommand from './commands/modal.js';
+// import PingCommand from './commands/ping.js';
+// import ScrappyCommand from './commands/scrappy.js';
+// import ModalCommand from './commands/modal.js';
 
-dotenv.config();
+// dotenv.config();
+
+const { Client, GatewayIntentBits, Routes } = require('discord.js');
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { REST } = require('@discordjs/rest');
+
+const { handleScrapbook } = require('./scrapbook.js');
+
+const PingCommand = require('./commands/ping.js');
+const ScrappyCommand = require('./commands/scrappy.js');
+const ModalCommand = require('./commands/modal.js');
+
+require('dotenv').config();
+
 
 const client = new Client({
   intents: [
