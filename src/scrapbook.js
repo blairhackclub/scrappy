@@ -1,8 +1,5 @@
-// import ShortUniqueId from 'short-unique-id';
-// import base from './base.js';
-
-const ShortUniqueId = require('short-unique-id');
-const base = require('./base.js');
+import ShortUniqueId from 'short-unique-id';
+import base from './base.js';
 
 const uid = new ShortUniqueId({ length: 10 });
 
@@ -68,7 +65,7 @@ function uploadScrap(discordUid, message, threadChannelId) {
   });
 }
 
-/*export */async function handleScrapbook(client, message) {
+export async function handleScrapbook(client, message) {
   if (message.channelId !== process.env.SCRAPBOOK_CHANNEL_ID) return;
   if (message.author.bot) return;
 
@@ -96,5 +93,3 @@ function uploadScrap(discordUid, message, threadChannelId) {
   await uploadScrap(user.id, message, threadChannel.id);
   client.channels.cache.get(threadChannel.id).send('Your post is live! 🙌');
 }
-
-module.exports = { handleScrapbook };

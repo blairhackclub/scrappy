@@ -1,10 +1,7 @@
-// import dotenv from 'dotenv';
-// import base from '../base.js';
+import dotenv from 'dotenv';
+import base from '../base.js';
 
-// dotenv.config();
-
-const base = require('../base.js');
-require('dotenv').config();
+dotenv.config();
 
 const supportedAvatarFileTypes = [
   'image/png',
@@ -60,8 +57,7 @@ const run = async (client, interaction) => {
   }
 };
 
-// export default { config, run };
-module.exports = { config, run };
+export default { config, run };
 
 
 function fetchUser(discordUid) {

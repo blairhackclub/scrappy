@@ -1,6 +1,4 @@
-// import { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } from 'discord.js';
-
-const { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } = require('discord.js');
+import { ModalBuilder, ActionRowBuilder, TextInputBuilder, TextInputStyle } from 'discord.js';
 
 const config = {
   name: 'modal',
@@ -29,5 +27,4 @@ const run = async (client, interaction) => {
     interaction.showModal(modal);
 };
 
-// export default { config, run };
-module.exports = { config, run };
+export default { config, run };
