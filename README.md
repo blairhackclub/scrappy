@@ -27,7 +27,7 @@ This bot integrates with an Airtable base to store and manage data. The base sho
 - `Users` table
   - `Username`: Single line text
   - `Record ID`: Formula, `RECORD_ID()` (optional)
-  - `Discord ID`: Single line text
+  - `Discord UID`: Single line text
   - `Avatar`: Attachment,
   - `GitHub User`: Single line text (not implemented yet)
   - `Website`: Single line text (not implemented yet)
