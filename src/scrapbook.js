@@ -1,3 +1,4 @@
+import { cleanContent } from 'discord.js'
 import ShortUniqueId from 'short-unique-id';
 import base from './base.js';
 
@@ -50,7 +51,7 @@ function uploadScrap(discordUid, message, threadChannelId) {
         fields: {
           "Discord Message ID": message.id,
           "Discord Thread ID": threadChannelId,
-          "Description": message.content,
+          "Description": cleanContent(message.content, message),
           "Attachments": message.attachments.map(a => {
             return { url: a.url };
           }),
