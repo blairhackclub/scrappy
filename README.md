@@ -50,6 +50,12 @@ npm i
 
 Isolate scrapbook feature as needed. Blair Hack Club scrapbook uses the `pages/scrapbook` folder, `lib` folder, `public/assets` folder, `components` folder, and `.env` (including all the required Next directories).
 
+Add a `.env` file with the following environment variables. WORK IN PROGRESS
+```
+NEXT_PUBLIC_AIRTABLE_BASE_ID=found in AirTable URL
+NEXT_PUBLIC_AIRTABLE_API_KEY=found in AirTable personal settings
+```
+
 Run the site.
 ```
 npm run dev
